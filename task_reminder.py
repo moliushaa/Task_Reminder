@@ -14,7 +14,7 @@ def run_countdown():
         if time_left.total_seconds() <= 0:
             countdown_label.config(text="已截止！")
         else:
-            days_left = time_left.days
+            days_left = time_left.days + 1
             countdown_label.config(text=f"{days_left}天！")
 
         countdown_label.after(1000, update_countdown)
@@ -24,7 +24,7 @@ def run_countdown():
     full_screen.title("run")
     full_screen.configure(bg="black")
     full_screen.attributes("-fullscreen", True)
-    name_label = tk.Label(full_screen, text=f"距离{task_name}还剩", font=("Arial", 48), fg="white", bg="black")
+    name_label = tk.Label(full_screen, text=f"距离{task_name}还剩:", font=("Arial", 48), fg="white", bg="black")
     name_label.pack(pady=20)
     countdown_label = tk.Label(full_screen, text="好多天！", font=("Arial", 56), fg="white", bg="black")
     countdown_label.pack(pady=20)
